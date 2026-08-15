@@ -1,0 +1,174 @@
+[
+  {
+    "id": "proj-1",
+    "title": "SUPERDEALS",
+    "category": "International Trading Company",
+    "shortDescription": "A modern e-commerce platform designed for seamless shopping, fast performance, and an intuitive user experience.",
+    "fullDescription": "SUPERDEALS is a full-featured international trading and e-commerce platform built with high performance, intuitive product browsing, responsive layout, and robust customer ordering flows.",
+    "tags": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "image": "/uploads/img-1786513181581-151258.avif",
+    "gallery": [],
+    "demoUrl": "https://project5-peach-rho.vercel.app/",
+    "githubUrl": "",
+    "status": "published",
+    "featured": true,
+    "createdAt": "2026-08-01T10:00:00.000Z",
+    "updatedAt": "2026-08-12T05:39:46.794Z"
+  },
+  {
+    "id": "proj-2",
+    "title": "MG Bakery",
+    "category": "Bakery Website",
+    "shortDescription": "A premium bakery website with modern UI, responsive design, product showcase, and smooth user experience.",
+    "fullDescription": "MG Bakery showcases artisanal baked goods with interactive menus, online ordering options, dynamic product sliders, and elegant visual branding.",
+    "tags": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "image": "/uploads/img-1786513427613-399339.avif",
+    "gallery": [],
+    "demoUrl": "https://mg-bakery.vercel.app/",
+    "githubUrl": "",
+    "status": "published",
+    "featured": true,
+    "createdAt": "2026-08-02T10:00:00.000Z",
+    "updatedAt": "2026-08-12T05:43:51.303Z"
+  },
+  {
+    "id": "proj-3",
+    "title": "Dominova Portfolio Showcase",
+    "category": "Company Portfolio",
+    "shortDescription": "Premium portfolio showcasing company projects with modern animations, responsive layouts, and interactive user experiences.",
+    "fullDescription": "Dominova Portfolio Showcase highlights our digital studio agency work featuring WebGL shaders, Framer Motion transitions, responsive grids, and high-converting service showcases.",
+    "tags": [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "image": "/uploads/img-1786513673262-912298.avif",
+    "gallery": [],
+    "demoUrl": "https://dominova-portfolio-showcase.vercel.app/",
+    "githubUrl": "",
+    "status": "published",
+    "featured": true,
+    "createdAt": "2026-08-03T10:00:00.000Z",
+    "updatedAt": "2026-08-12T05:47:58.241Z"
+  },
+  {
+    "id": "proj-4",
+    "title": "Exim World",
+    "category": "Import & Export",
+    "shortDescription": "Corporate website developed for an international import and export business with a professional enterprise design and global reach.",
+    "fullDescription": "Exim World is an enterprise platform representing global import and export trade services, logistics tracking, multi-region compliance, and corporate partnership channels.",
+    "tags": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "image": "/uploads/img-1786513917911-467135.avif",
+    "gallery": [],
+    "demoUrl": "https://www.eximworld.co.in/",
+    "githubUrl": "",
+    "status": "published",
+    "featured": false,
+    "createdAt": "2026-08-04T10:00:00.000Z",
+    "updatedAt": "2026-08-12T05:52:01.354Z"
+  },
+  {
+    "id": "proj-5",
+    "title": "Kirthiga's Tech Sphere",
+    "category": "Technology Website",
+    "shortDescription": "Technology-focused website featuring modern layouts, responsive design, and engaging content presentation for tech enthusiasts.",
+    "fullDescription": "Kirthiga's Tech Sphere presents modern tech insights, software developments, interactive developer tools, and responsive digital article layouts.",
+    "tags": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "image": "/uploads/img-1786514066980-643463.avif",
+    "gallery": [],
+    "demoUrl": "https://kirthiga-s-tech-sphere.vercel.app/",
+    "githubUrl": "",
+    "status": "published",
+    "featured": false,
+    "createdAt": "2026-08-05T10:00:00.000Z",
+    "updatedAt": "2026-08-12T05:54:29.481Z"
+  },
+  {
+    "id": "proj-6",
+    "title": "Regal Gemini Shoppe",
+    "category": "E-Commerce",
+    "shortDescription": "Modern online shopping website with elegant product presentation and responsive shopping experience for discerning customers.",
+    "fullDescription": "Regal Gemini Shoppe is a high-end luxury e-commerce boutique with dynamic product filtering, cart management, sleek UI cards, and responsive payment flows.",
+    "tags": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "image": "https://cdn.cloudbf.com/thumb/format/mini_xsize/files/132/img/2023/09/04/5f3ea7cf-d975-4594-95b0-2cc621fe6b6a_O18zZo.png.webp",
+    "gallery": [],
+    "demoUrl": "https://regal-gemini-shoppe.vercel.app/",
+    "githubUrl": "",
+    "status": "published",
+    "featured": false,
+    "createdAt": "2026-08-06T10:00:00.000Z",
+    "updatedAt": "2026-08-12T06:00:44.366Z"
+  },
+  {
+    "id": "proj-7",
+    "title": "Prabha Lands",
+    "category": "Real Estate",
+    "shortDescription": "Professional real estate website showcasing residential and commercial properties with modern UI and seamless property discovery.",
+    "fullDescription": "Prabha Lands is a real estate portal for browsing residential plots, commercial properties, property valuation calculators, and client inquiry booking.",
+    "tags": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "image": "https://www.prabhalands.com/assets/place-2CrKJhHY.jpeg",
+    "gallery": [],
+    "demoUrl": "https://www.prabhalands.com/",
+    "githubUrl": "",
+    "status": "published",
+    "featured": false,
+    "createdAt": "2026-08-07T10:00:00.000Z",
+    "updatedAt": "2026-08-12T05:25:25.433Z"
+  },
+  {
+    "id": "proj-8",
+    "title": "Pre Play School",
+    "category": "Education",
+    "shortDescription": "Interactive preschool website with colorful design, responsive layouts, admissions information, and engaging user experience for families.",
+    "fullDescription": "Pre Play School features early-childhood learning pathways, admissions forms, virtual campus tours, teacher profiles, and parent communication channels.",
+    "tags": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "image": "/uploads/img-1786514570079-10092.webp",
+    "gallery": [],
+    "demoUrl": "https://pre-play-school.vercel.app/",
+    "githubUrl": "",
+    "status": "published",
+    "featured": false,
+    "createdAt": "2026-08-08T10:00:00.000Z",
+    "updatedAt": "2026-08-12T06:02:53.545Z"
+  },
+  {
+    "id": "proj-9",
+    "title": "Bethel Schools",
+    "category": "Education",
+    "shortDescription": "Official website for Bethel Nursery & Primary School, featuring admissions, academic programs, campus facilities, and interactive parent resources.",
+    "fullDescription": "Bethel Nursery & Primary School (established 1993) provides quality English Medium primary education from Pre-KG to 5th Standard, featuring online admission forms, academic announcements, and campus highlights.",
+    "tags": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "image": "/uploads/img-1786514814692-928519.png",
+    "gallery": [],
+    "demoUrl": "https://www.bethelschools.com/",
+    "githubUrl": "",
+    "status": "published",
+    "featured": false,
+    "createdAt": "2026-08-12T10:00:00.000Z",
+    "updatedAt": "2026-08-12T06:06:58.437Z"
+  }
+]

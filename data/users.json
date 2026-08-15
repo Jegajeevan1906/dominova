@@ -1,0 +1,9 @@
+[
+  {
+    "id": "usr-admin-1",
+    "username": "admin",
+    "passwordHash": "$2a$10$eKf6kTtPr6ZXi799fOj8yuL1AriVdC2OVVzTKe95wfA6KMY42nvym",
+    "name": "System Admin",
+    "createdAt": "2026-08-12T05:12:27.651Z"
+  }
+]

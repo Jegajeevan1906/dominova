@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOMINOVA | Premium Software Development & Digital Solutions Studio</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="DOMINOVA is a world-class digital studio crafting luxury, modern web applications, mobile apps, and premium digital solutions with stunning interactive design and clean code.">
+  <meta name="keywords" content="Software Development, Web Development, Web Applications, Mobile Apps, UI/UX Design, SEO, Cloud Deployment, Maintenance, Premium Agency, Dominova">
+  <meta name="author" content="DOMINOVA">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dominova.in/">
+  <meta property="og:title" content="DOMINOVA | Premium Software Development & Digital Solutions Studio">
+  <meta property="og:description" content="DOMINOVA is a world-class digital studio crafting luxury, modern web applications, mobile apps, and premium digital solutions.">
+  <meta property="og:image" content="https://dominova-projectportfolio.vercel.app/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://dominova.in/">
+  <meta property="twitter:title" content="DOMINOVA | Premium Software Development & Digital Solutions Studio">
+  <meta property="twitter:description" content="DOMINOVA is a world-class digital studio crafting luxury, modern web applications, mobile apps, and premium digital solutions.">
+  <meta property="twitter:image" content="https://dominova-projectportfolio.vercel.app/og-image.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Fonts: Fira Code (code snippet) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       Premium WebGL Shader Background
+       position:fixed · z-index:-1 · pointer-events:none
+       Managed entirely by shader-bg.js — do not remove.
+       ═══════════════════════════════════════════════════════════ -->
+  <canvas id="dominova-shader-bg" aria-hidden="true"></canvas>
+
+  <!-- Cursor Glow Background Element -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Animated Background Blobs -->
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" aria-label="DOMINOVA Homepage">
+        <img src="logo.png" alt="DOMINOVA" class="nav-logo-img">
+        <span class="logo-text">DOMINOVA</span>
+      </a>
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#why-choose" class="nav-link">Why Us</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary"><span class="btn-text">Start Your Project</span></a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle dark/light mode">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <a href="#hero" class="mobile-nav-link">Home</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#process" class="mobile-nav-link">Process</a>
+        <a href="#why-choose" class="mobile-nav-link">Why Us</a>
+        <a href="#testimonials" class="mobile-nav-link">Testimonials</a>
+        <a href="#faq" class="mobile-nav-link">FAQ</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </nav>
+      <a href="https://wa.me/918754325192" target="_blank" rel="noopener noreferrer" class="btn btn-primary mobile-menu-cta">
+        <i class="fa-brands fa-whatsapp"></i> <span class="btn-text">Chat on WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div class="hero-content reveal">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Available for New Projects</span>
+        </div>
+        <h1 class="hero-title">We craft <span class="gradient-text shimmer">premium</span> digital experiences.</h1>
+        <p class="hero-subtitle">DOMINOVA is a modern software studio. We design and build high-end web applications, mobile apps, and bespoke digital solutions that set industry benchmarks.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary btn-lg"><span class="btn-text">Start Your Project</span></a>
+          <a href="#projects" class="btn btn-ghost btn-lg"><span class="btn-text">View Projects</span></a>
+        </div>
+        <div class="hero-pills">
+          <span class="pill">Web Apps</span>
+          <span class="pill">Mobile Apps</span>
+          <span class="pill">UI/UX Strategy</span>
+          <span class="pill">Cloud Scaling</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="hero-card glass-card">
+          <div class="hero-card-header">
+            <div class="hero-card-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="hero-card-label">dominova.studio</div>
+          </div>
+          <div class="hero-card-content code-snippet">
+            <div class="code-line"><span class="keyword">const</span> <span class="variable">project</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="class-name">Dominova</span>();</div>
+            <div class="code-line empty"></div>
+            <div class="code-line"><span class="variable">project</span>.<span class="method">design</span>();</div>
+            <div class="code-line"><span class="variable">project</span>.<span class="method">develop</span>();</div>
+            <div class="code-line"><span class="variable">project</span>.<span class="method">deploy</span>();</div>
+          </div>
+        </div>
+        <!-- Floating Glass Cards -->
+        <div class="floating-card floating-card-1 glass-card">
+          <span class="floating-icon">🚀</span>
+          <div>
+            <div class="floating-title">Premium Quality</div>
+            <div class="floating-sub">Next-gen performance</div>
+          </div>
+        </div>
+        <div class="floating-card floating-card-2 glass-card">
+          <span class="floating-icon">🎨</span>
+          <div>
+            <div class="floating-title">Beautiful UI/UX</div>
+            <div class="floating-sub">Luxury aesthetic</div>
+          </div>
+        </div>
+        <div class="floating-card floating-card-3 glass-card">
+          <span class="floating-icon">⚡</span>
+          <div>
+            <div class="floating-title">Ultra Fast</div>
+            <div class="floating-sub">GPU accelerated</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Stats -->
+    <div class="hero-stats reveal">
+      <div class="stats-container">
+        <div class="stat-card glass-card">
+          <div class="stat-num-wrapper"><span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span></div>
+          <div class="stat-label">Satisfaction Rate</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-num-wrapper"><span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Completed Projects</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-num-wrapper"><span class="stat-number" data-target="25">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-num-wrapper"><span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Projects</span>
+        <h2 class="section-title">Our Recent Projects</h2>
+        <p class="section-subtitle">Explore our portfolio of professionally designed and developed websites across various industries, demonstrating our expertise in web design, development, branding, and digital transformation.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="project-filters reveal" id="projectFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="International Trading Company">Trading</button>
+        <button class="filter-btn" data-filter="Bakery Website">Bakery</button>
+        <button class="filter-btn" data-filter="Company Portfolio">Portfolio</button>
+        <button class="filter-btn" data-filter="Import &amp; Export">Import &amp; Export</button>
+        <button class="filter-btn" data-filter="Technology Website">Technology</button>
+        <button class="filter-btn" data-filter="E-Commerce">E-Commerce</button>
+        <button class="filter-btn" data-filter="Real Estate">Real Estate</button>
+        <button class="filter-btn" data-filter="Education">Education</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-portfolio-grid" id="projectsGrid">
+
+        <!-- 1. SUPERDEALS -->
+        <div class="pf-card glass-card" data-category="International Trading Company">
+          <div class="pf-image-wrap">
+            <img
+              src="/uploads/img-1786513181581-151258.avif"
+              alt="SUPERDEALS preview"
+              loading="lazy"
+              class="pf-img"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80'">
+            <div class="pf-overlay">
+              <a href="https://project5-peach-rho.vercel.app/" target="_blank" rel="noopener noreferrer" class="pf-overlay-btn" aria-label="Visit SUPERDEALS">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-category">International Trading Company</span>
+            <h3 class="pf-title">SUPERDEALS</h3>
+            <p class="pf-desc">A modern e-commerce platform designed for seamless shopping, fast performance, and an intuitive user experience.</p>
+            <div class="pf-tags">
+              <span class="pf-tag">React</span>
+              <span class="pf-tag">Tailwind CSS</span>
+            </div>
+            <a href="https://project5-peach-rho.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary pf-btn">
+              Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. MG Bakery -->
+        <div class="pf-card glass-card" data-category="Bakery Website">
+          <div class="pf-image-wrap">
+            <img
+              src="/uploads/img-1786513427613-399339.avif"
+              alt="MG Bakery preview"
+              loading="lazy"
+              class="pf-img"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=800&q=80'">
+            <div class="pf-overlay">
+              <a href="https://mg-bakery.vercel.app/" target="_blank" rel="noopener noreferrer" class="pf-overlay-btn" aria-label="Visit MG Bakery">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-category">Bakery Website</span>
+            <h3 class="pf-title">MG Bakery</h3>
+            <p class="pf-desc">A premium bakery website with modern UI, responsive design, product showcase, and smooth user experience.</p>
+            <div class="pf-tags">
+              <span class="pf-tag">React</span>
+              <span class="pf-tag">Tailwind CSS</span>
+            </div>
+            <a href="https://mg-bakery.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary pf-btn">
+              Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Dominova Portfolio Showcase -->
+        <div class="pf-card glass-card" data-category="Company Portfolio">
+          <div class="pf-image-wrap">
+            <img
+              src="/uploads/img-1786513673262-912298.avif"
+              alt="Dominova Portfolio Showcase preview"
+              loading="lazy"
+              class="pf-img"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80'">
+            <div class="pf-overlay">
+              <a href="https://dominova-portfolio-showcase.vercel.app/" target="_blank" rel="noopener noreferrer" class="pf-overlay-btn" aria-label="Visit Dominova Portfolio Showcase">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-category">Company Portfolio</span>
+            <h3 class="pf-title">Dominova Portfolio Showcase</h3>
+            <p class="pf-desc">Premium portfolio showcasing company projects with modern animations, responsive layouts, and interactive user experiences.</p>
+            <div class="pf-tags">
+              <span class="pf-tag">React</span>
+              <span class="pf-tag">Tailwind CSS</span>
+              <span class="pf-tag">Framer Motion</span>
+            </div>
+            <a href="https://dominova-portfolio-showcase.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary pf-btn">
+              Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Exim World -->
+        <div class="pf-card glass-card" data-category="Import &amp; Export">
+          <div class="pf-image-wrap">
+            <img
+              src="/uploads/img-1786513917911-467135.avif"
+              alt="Exim World preview"
+              loading="lazy"
+              class="pf-img"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80'">
+            <div class="pf-overlay">
+              <a href="https://www.eximworld.co.in/" target="_blank" rel="noopener noreferrer" class="pf-overlay-btn" aria-label="Visit Exim World">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-category">Import &amp; Export</span>
+            <h3 class="pf-title">Exim World</h3>
+            <p class="pf-desc">Corporate website developed for an international import and export business with a professional enterprise design and global reach.</p>
+            <div class="pf-tags">
+              <span class="pf-tag">React</span>
+              <span class="pf-tag">Tailwind CSS</span>
+            </div>
+            <a href="https://www.eximworld.co.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary pf-btn">
+              Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Kirthiga's Tech Sphere -->
+        <div class="pf-card glass-card" data-category="Technology Website">
+          <div class="pf-image-wrap">
+            <img
+              src="/uploads/img-1786514066980-643463.avif"
+              alt="Kirthiga's Tech Sphere preview"
+              loading="lazy"
+              class="pf-img"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+            <div class="pf-overlay">
+              <a href="https://kirthiga-s-tech-sphere.vercel.app/" target="_blank" rel="noopener noreferrer" class="pf-overlay-btn" aria-label="Visit Kirthiga's Tech Sphere">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-category">Technology Website</span>
+            <h3 class="pf-title">Kirthiga's Tech Sphere</h3>
+            <p class="pf-desc">Technology-focused website featuring modern layouts, responsive design, and engaging content presentation for tech enthusiasts.</p>
+            <div class="pf-tags">
+              <span class="pf-tag">React</span>
+              <span class="pf-tag">Tailwind CSS</span>
+            </div>
+            <a href="https://kirthiga-s-tech-sphere.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary pf-btn">
+              Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. Regal Gemini Shoppe -->
+        <div class="pf-card glass-card" data-category="E-Commerce">
+          <div class="pf-image-wrap">
+            <img
+              src="https://cdn.cloudbf.com/thumb/format/mini_xsize/files/132/img/2023/09/04/5f3ea7cf-d975-4594-95b0-2cc621fe6b6a_O18zZo.png.webp"
+              alt="Regal Gemini Shoppe preview"
+              loading="lazy"
+              class="pf-img"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80'">
+            <div class="pf-overlay">
+              <a href="https://regal-gemini-shoppe.vercel.app/" target="_blank" rel="noopener noreferrer" class="pf-overlay-btn" aria-label="Visit Regal Gemini Shoppe">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-category">E-Commerce</span>
+            <h3 class="pf-title">Regal Gemini Shoppe</h3>
+            <p class="pf-desc">Modern online shopping website with elegant product presentation and responsive shopping experience for discerning customers.</p>
+            <div class="pf-tags">
+              <span class="pf-tag">React</span>
+              <span class="pf-tag">Tailwind CSS</span>
+            </div>
+            <a href="https://regal-gemini-shoppe.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary pf-btn">
+              Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. Prabha Lands -->
+        <div class="pf-card glass-card" data-category="Real Estate">
+          <div class="pf-image-wrap">
+            <img
+              src="https://www.prabhalands.com/assets/place-2CrKJhHY.jpeg"
+              alt="Prabha Lands preview"
+              loading="lazy"
+              class="pf-img"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'">
+            <div class="pf-overlay">
+              <a href="https://www.prabhalands.com/" target="_blank" rel="noopener noreferrer" class="pf-overlay-btn" aria-label="Visit Prabha Lands">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-category">Real Estate</span>
+            <h3 class="pf-title">Prabha Lands</h3>
+            <p class="pf-desc">Professional real estate website showcasing residential and commercial properties with modern UI and seamless property discovery.</p>
+            <div class="pf-tags">
+              <span class="pf-tag">React</span>
+              <span class="pf-tag">Tailwind CSS</span>
+            </div>
+            <a href="https://www.prabhalands.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary pf-btn">
+              Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 8. Pre Play School -->
+        <div class="pf-card glass-card" data-category="Education">
+          <div class="pf-image-wrap">
+            <img
+              src="/uploads/img-1786514570079-10092.webp"
+              alt="Pre Play School preview"
+              loading="lazy"
+              class="pf-img"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80'">
+            <div class="pf-overlay">
+              <a href="https://pre-play-school.vercel.app/" target="_blank" rel="noopener noreferrer" class="pf-overlay-btn" aria-label="Visit Pre Play School">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-category">Education</span>
+            <h3 class="pf-title">Pre Play School</h3>
+            <p class="pf-desc">Interactive preschool website with colorful design, responsive layouts, admissions information, and engaging user experience for families.</p>
+            <div class="pf-tags">
+              <span class="pf-tag">React</span>
+              <span class="pf-tag">Tailwind CSS</span>
+            </div>
+            <a href="https://pre-play-school.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary pf-btn">
+              Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 9. Bethel Schools -->
+        <div class="pf-card glass-card" data-category="Education">
+          <div class="pf-image-wrap">
+            <img
+              src="/uploads/img-1786514814692-928519.png"
+              alt="Bethel Schools preview"
+              loading="lazy"
+              class="pf-img"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80'">
+            <div class="pf-overlay">
+              <a href="https://www.bethelschools.com/" target="_blank" rel="noopener noreferrer" class="pf-overlay-btn" aria-label="Visit Bethel Schools">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-category">Education</span>
+            <h3 class="pf-title">Bethel Schools</h3>
+            <p class="pf-desc">Official website for Bethel Nursery &amp; Primary School, featuring admissions, academic programs, campus facilities, and interactive parent resources.</p>
+            <div class="pf-tags">
+              <span class="pf-tag">React</span>
+              <span class="pf-tag">Tailwind CSS</span>
+            </div>
+            <a href="https://www.bethelschools.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary pf-btn">
+              Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /projects-portfolio-grid -->
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section process-section" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Development Process</span>
+        <h2 class="section-title">How We Build</h2>
+        <p class="section-subtitle">A methodical approach focused on absolute quality, constant iteration, and clear milestones.</p>
+      </div>
+      <div class="process-timeline reveal">
+        <div class="process-step">
+          <span class="step-number">01</span>
+          <div class="step-icon"><i class="fa-regular fa-lightbulb"></i></div>
+          <h3 class="step-title">Discovery</h3>
+          <p class="step-desc">Extracting system requirements, core target values, and architecture scope.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">02</span>
+          <div class="step-icon"><i class="fa-regular fa-map"></i></div>
+          <h3 class="step-title">Planning</h3>
+          <p class="step-desc">Creating wireframes, tech stack mappings, and concrete delivery roadmaps.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">03</span>
+          <div class="step-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 class="step-title">Design</h3>
+          <p class="step-desc">Drafting high-end UI mockups, visual identity, and luxury user journeys.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">04</span>
+          <div class="step-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3 class="step-title">Development</h3>
+          <p class="step-desc">Writing high-performance clean code with smooth frontend interactions.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">05</span>
+          <div class="step-icon"><i class="fa-solid fa-vial-virus"></i></div>
+          <h3 class="step-title">Testing</h3>
+          <p class="step-desc">Detailed browser, performance, security, and responsive UI testing.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">06</span>
+          <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3 class="step-title">Launch</h3>
+          <p class="step-desc">Production hosting setups, speed validation, and public release.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">07</span>
+          <div class="step-icon"><i class="fa-solid fa-toolbox"></i></div>
+          <h3 class="step-title">Support</h3>
+          <p class="step-desc">On-demand upgrades, monthly maintenance, and security monitoring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Why Choose Section -->
+  <section class="section why-section" id="why-choose">
+    <div class="container">
+      <div class="why-header">
+        <span class="why-badge" data-anim="fade-down">WHY DOMINOVA</span>
+        <h2 class="why-heading" data-anim="blur-reveal">The Studio Difference</h2>
+        <p class="why-description" data-anim="fade-up">We merge elite UX/UI design with industry-standard development patterns to produce outstanding software.</p>
+      </div>
+      <div class="why-grid">
+        <!-- Card 1 -->
+        <div class="why-card glass-card" data-anim="fade-up" style="transition-delay: 0.1s;">
+          <div class="why-card-top">
+            <div class="why-card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+                <path d="M19 12a7 7 0 0 0-14 0" />
+                <path d="M12 17v-4" />
+                <circle cx="12" cy="17" r="1" />
+              </svg>
+            </div>
+            <h3 class="why-card-title">Superb Speeds</h3>
+            <p class="why-card-desc">Optimized rendering and lean payloads ensure under 1.5 second loading times and 95+ PageSpeed scores.</p>
+          </div>
+          <div class="why-card-stat">
+            <div class="why-stat-num-row">
+              <span class="why-number" data-target="100">0</span><span class="why-stat-unit">%</span>
+            </div>
+            <span class="why-stat-label">Satisfaction Rate</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="why-card glass-card" data-anim="fade-up" style="transition-delay: 0.2s;">
+          <div class="why-card-top">
+            <div class="why-card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="3" ry="3" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+              </svg>
+            </div>
+            <h3 class="why-card-title">Mobile First</h3>
+            <p class="why-card-desc">Carefully calculated responsive breakpoints mean your content fits any smartphone viewport flawlessly.</p>
+          </div>
+          <div class="why-card-stat">
+            <div class="why-stat-num-row">
+              <span class="why-number" data-target="100">0</span><span class="why-stat-unit">%</span>
+            </div>
+            <span class="why-stat-label">Mobile Score</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="why-card glass-card" data-anim="fade-up" style="transition-delay: 0.3s;">
+          <div class="why-card-top">
+            <div class="why-card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3 class="why-card-title">Secure &amp; Scaling</h3>
+            <p class="why-card-desc">Structured code base deployed over edge networks ensuring robust data protection and massive client-base support.</p>
+          </div>
+          <div class="why-card-stat">
+            <div class="why-stat-num-row">
+              <span class="why-number" data-target="99">0</span><span class="why-stat-unit">.9%</span>
+            </div>
+            <span class="why-stat-label">Uptime Guarantee</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="why-card glass-card" data-anim="fade-up" style="transition-delay: 0.4s;">
+          <div class="why-card-top">
+            <div class="why-card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+              </svg>
+            </div>
+            <h3 class="why-card-title">Client-centric</h3>
+            <p class="why-card-desc">Direct communications via Slack / WhatsApp ensuring quick status returns and transparent project timelines.</p>
+          </div>
+          <div class="why-card-stat">
+            <div class="why-stat-num-row">
+              <span class="why-number" data-target="24">0</span><span class="why-stat-unit">/7</span>
+            </div>
+            <span class="why-stat-label">Active Support Channels</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="section tech-section" id="technologies">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Tech Stack</span>
+        <h2 class="section-title">Our Ecosystem</h2>
+        <p class="section-subtitle">We deploy modern frameworks and systems that run at lightning speeds on all client viewports.</p>
+      </div>
+    </div>
+    <!-- Ecosystem Carousel -->
+    <div class="ecosystem-carousel-wrapper reveal">
+      <button class="eco-arrow eco-arrow-prev" id="ecoPrev" aria-label="Previous technologies">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="ecosystem-carousel" id="ecosystemCarousel">
+        <div class="ecosystem-track" id="ecosystemTrack">
+          <!-- Original set -->
+          <div class="tech-item"><span class="tech-icon"><i class="fa-brands fa-react fa-2x"></i><br>React</span></div>
+          <div class="tech-item"><span class="tech-icon"><i class="fa-brands fa-html5 fa-2x"></i><br>HTML5</span></div>
+          <div class="tech-item"><span class="tech-icon"><i class="fa-brands fa-css3-alt fa-2x"></i><br>CSS3</span></div>
+          <div class="tech-item"><span class="tech-icon"><i class="fa-brands fa-square-js fa-2x"></i><br>ESNext</span></div>
+          <div class="tech-item"><span class="tech-icon"><i class="fa-brands fa-node fa-2x"></i><br>Node.js</span></div>
+          <div class="tech-item"><span class="tech-icon"><i class="fa-brands fa-git-alt fa-2x"></i><br>Git</span></div>
+          <div class="tech-item"><span class="tech-icon"><i class="fa-solid fa-cloud fa-2x"></i><br>Vercel</span></div>
+          <div class="tech-item"><span class="tech-icon"><i class="fa-brands fa-aws fa-2x"></i><br>AWS</span></div>
+          <!-- Duplicated set for infinite loop -->
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><i class="fa-brands fa-react fa-2x"></i><br>React</span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><i class="fa-brands fa-html5 fa-2x"></i><br>HTML5</span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><i class="fa-brands fa-css3-alt fa-2x"></i><br>CSS3</span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><i class="fa-brands fa-square-js fa-2x"></i><br>ESNext</span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><i class="fa-brands fa-node fa-2x"></i><br>Node.js</span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><i class="fa-brands fa-git-alt fa-2x"></i><br>Git</span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><i class="fa-solid fa-cloud fa-2x"></i><br>Vercel</span></div>
+          <div class="tech-item" aria-hidden="true"><span class="tech-icon"><i class="fa-brands fa-aws fa-2x"></i><br>AWS</span></div>
+        </div>
+      </div>
+      <button class="eco-arrow eco-arrow-next" id="ecoNext" aria-label="Next technologies">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Client Consensus</h2>
+        <p class="section-subtitle">Hear what founders and product teams have to say about working with the DOMINOVA studio.</p>
+      </div>
+    </div>
+    
+    <!-- Infinite Marquee Testimonials -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <!-- Card 1 -->
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-quote">“</div>
+          <p class="testimonial-text">DOMINOVA completely revitalized our retail brand online. Direct WhatsApp integrations changed the way our customer base browses inventory. Incredible output.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SK</div>
+            <div>
+              <div class="author-name">Sri Karthika</div>
+              <div class="author-role">Founder, SK Jewellery</div>
+            </div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-quote">“</div>
+          <p class="testimonial-text">Working with DOMINOVA was highly streamlined. The timeline milestones were clearly tracked and our B2B ordering portal was deployed well ahead of schedule.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PA</div>
+            <div>
+              <div class="author-name">Prabha Agencies</div>
+              <div class="author-role">Operations Manager</div>
+            </div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-quote">“</div>
+          <p class="testimonial-text">The level of interactive animation and visual polish DOMINOVA brought to our product platform is exceptional. Highly recommend their software solutions.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SD</div>
+            <div>
+              <div class="author-name">SuperDeals Trading</div>
+              <div class="author-role">Co-Founder</div>
+            </div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Repeat Cards for Continuous Marquee -->
+        <!-- Card 1 -->
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-quote">“</div>
+          <p class="testimonial-text">DOMINOVA completely revitalized our retail brand online. Direct WhatsApp integrations changed the way our customer base browses inventory. Incredible output.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SK</div>
+            <div>
+              <div class="author-name">Sri Karthika</div>
+              <div class="author-role">Founder, SK Jewellery</div>
+            </div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-quote">“</div>
+          <p class="testimonial-text">Working with DOMINOVA was highly streamlined. The timeline milestones were clearly tracked and our B2B ordering portal was deployed well ahead of schedule.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PA</div>
+            <div>
+              <div class="author-name">Prabha Agencies</div>
+              <div class="author-role">Operations Manager</div>
+            </div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="testimonial-card glass-card">
+          <div class="testimonial-quote">“</div>
+          <p class="testimonial-text">The level of interactive animation and visual polish DOMINOVA brought to our product platform is exceptional. Highly recommend their software solutions.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SD</div>
+            <div>
+              <div class="author-name">SuperDeals Trading</div>
+              <div class="author-role">Co-Founder</div>
+            </div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Common Queries</h2>
+        <p class="section-subtitle">Everything you need to know about starting your project with DOMINOVA.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>What technologies do you use?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We work predominantly with React, Next.js, HTML5/CSS3/ESNext, React Native, Node.js, and host on robust platforms like Vercel and AWS.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>How long does a standard website take?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A standard marketing website (1-5 pages) takes 1 to 2 weeks. Complex custom applications requiring databases may take 3 to 6 weeks.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do you offer monthly maintenance?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we offer maintenance plans covering domain renewal setup, secure backups, hosting monitoring, and on-demand content edits.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can you implement custom payment systems?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. We construct customized integrations with payment facilitators like Stripe, Razorpay, and PayPal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title">Start Your Milestone</h2>
+        <p class="section-subtitle">Reach out to our engineering studio to design, test, and release your next digital product.</p>
+      </div>
+      <div class="contact-grid">
+        <!-- Info Column -->
+        <div class="contact-info reveal">
+          <h3 class="contact-info-title">Let's Connect</h3>
+          <p class="contact-info-desc">Feel free to contact us via form, or reach out directly on our social and messaging lines. We reply within 4 hours.</p>
+          
+          <div class="contact-channels">
+            <a href="https://wa.me/918754325192" target="_blank" rel="noopener noreferrer" class="contact-channel glass-card">
+              <span class="channel-icon text-success"><i class="fa-brands fa-whatsapp"></i></span>
+              <div>
+                <div class="channel-label">WhatsApp</div>
+                <div class="channel-value">+91 8754325192</div>
+              </div>
+              <span class="channel-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+            <a href="mailto:dominova.office@gmail.com" class="contact-channel glass-card">
+              <span class="channel-icon text-primary"><i class="fa-regular fa-envelope"></i></span>
+              <div>
+                <div class="channel-label">Email</div>
+                <div class="channel-value">dominova.office@gmail.com</div>
+              </div>
+              <span class="channel-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+            <a href="tel:+918754325192" class="contact-channel glass-card">
+              <span class="channel-icon"><i class="fa-solid fa-phone"></i></span>
+              <div>
+                <div class="channel-label">Call Us</div>
+                <div class="channel-value">+91 8754325192</div>
+              </div>
+              <span class="channel-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form glass-card reveal reveal-delay-1">
+          <h3 class="form-title">Consultation Request</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                <span class="field-hint" id="emailHint">Please enter a valid email address.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="projectType">Project Tier</label>
+              <select id="projectType" name="projectType">
+                <option value="basic">Basic (₹4,999)</option>
+                <option value="standard" selected>Standard (₹7,999)</option>
+                <option value="premium">Premium (₹14,999)</option>
+                <option value="custom">Bespoke Custom Build</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Project Description</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your brand, design wishes, and system needs..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full btn-lg" id="submitBtn">
+              <span class="btn-text">Send Request</span> <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fa-solid fa-circle-check"></i> Thank you! Your consultation request has been received.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="logo.png" alt="DOMINOVA" class="footer-logo-img">
+            <span class="logo-text">DOMINOVA</span>
+          </div>
+          <p class="footer-tagline">Crafting world-class digital products and high-performance user journeys for brands around the globe.</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/dominova_chennai_" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/918754325192" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="WhatsApp Chat"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:dominova.office@gmail.com" class="footer-social" aria-label="Email Address"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">Company</div>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#why-choose">Why Us</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Services</div>
+            <ul>
+              <li><a href="#services">Websites</a></li>
+              <li><a href="#services">Web Apps</a></li>
+              <li><a href="#services">Mobile Apps</a></li>
+              <li><a href="#services">UI/UX Design</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Projects</div>
+            <ul>
+              <li><a href="#projects">Dominova Site</a></li>
+              <li><a href="#projects">SuperDeals</a></li>
+              <li><a href="#projects">Sri Karthika</a></li>
+              <li><a href="#projects">Prabha Agencies</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Pricing</div>
+            <ul>
+              <li><a href="#pricing">Basic Tier</a></li>
+              <li><a href="#pricing">Standard Tier</a></li>
+              <li><a href="#pricing">Premium Tier</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 DOMINOVA. All rights reserved. Built with precision.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom WhatsApp CTA (Mobile only) -->
+  <div class="sticky-whatsapp" id="stickyWhatsapp">
+    <a href="https://wa.me/918754325192" target="_blank" rel="noopener noreferrer" class="sticky-whatsapp-btn">
+      <i class="fa-brands fa-whatsapp fa-xl"></i> Chat on WhatsApp
+    </a>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="cursor-grid.js"></script>
+  <script src="script.js"></script>
+  <!-- Premium Animations Engine -->
+  <script src="animations.js"></script>
+  <!-- WebGL Shader Background -->
+  <script src="shader-bg.js"></script>
+</body>
+</html>

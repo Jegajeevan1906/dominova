@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOMINOVA | Admin Studio Dashboard</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Admin Styles -->
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       1. LOGIN VIEW
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="loginView" class="admin-login-wrapper">
+    <div class="login-bg-glow"></div>
+    <div class="login-card glass-card">
+      <div class="login-header">
+        <img src="/logo.png" alt="DOMINOVA Logo" class="login-logo" onerror="this.style.display='none'">
+        <h1 class="login-brand">DOMINOVA</h1>
+        <p class="login-subtitle">Studio Admin Portal</p>
+      </div>
+
+      <div id="loginError" class="alert alert-danger hidden" role="alert">
+        <i class="fa-solid fa-triangle-exclamation"></i> <span id="loginErrorText">Invalid username or password.</span>
+      </div>
+
+      <form id="loginForm" class="login-form" novalidate>
+        <div class="form-group">
+          <label for="usernameInput" class="form-label">Username</label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-user input-icon"></i>
+            <input type="text" id="usernameInput" class="form-control" placeholder="Enter admin username" required autocomplete="username">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="passwordInput" class="form-label">Password</label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="passwordInput" class="form-control" placeholder="Enter admin password" required autocomplete="current-password">
+            <button type="button" id="togglePasswordBtn" class="pwd-toggle" aria-label="Toggle password visibility">
+              <i class="fa-solid fa-eye" id="pwdEyeIcon"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" id="loginSubmitBtn" class="btn btn-primary btn-block">
+          <span class="btn-text">Sign In to Dashboard</span>
+          <i class="fa-solid fa-arrow-right btn-icon"></i>
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <span>Protected Admin System</span> &bull; <span>DOMINOVA Studio &copy; 2026</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       2. MAIN DASHBOARD VIEW
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="dashboardView" class="admin-dashboard-layout hidden">
+    
+    <!-- Mobile Navigation Overlay -->
+    <div id="sidebarOverlay" class="sidebar-overlay hidden"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside id="adminSidebar" class="admin-sidebar">
+      <div class="sidebar-header">
+        <a href="/admin/dashboard" class="sidebar-brand">
+          <img src="/logo.png" alt="DOMINOVA" class="brand-logo" onerror="this.style.display='none'">
+          <div class="brand-text">
+            <span class="brand-name">DOMINOVA</span>
+            <span class="brand-badge">STUDIO ADMIN</span>
+          </div>
+        </a>
+        <button id="closeMobileSidebarBtn" class="mobile-sidebar-close" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#overview" class="nav-item active" data-view="overview">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard Overview</span>
+        </a>
+        <a href="#projects" class="nav-item" data-view="projects">
+          <i class="fa-solid fa-folder-open"></i>
+          <span>All Projects</span>
+          <span id="sidebarProjectsCount" class="count-pill">0</span>
+        </a>
+        <a href="#add-project" class="nav-item" data-view="add-project">
+          <i class="fa-solid fa-square-plus"></i>
+          <span>Add New Project</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/" target="_blank" class="sidebar-ext-link">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>View Public Site</span>
+        </a>
+        <div class="user-info-card glass-card">
+          <div class="user-avatar"><i class="fa-solid fa-user-gear"></i></div>
+          <div class="user-details">
+            <span id="currentAdminName" class="user-name">Admin User</span>
+            <span class="user-role">Administrator</span>
+          </div>
+        </div>
+        <button id="logoutBtn" class="btn btn-outline btn-logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Top Bar Header -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button id="openMobileSidebarBtn" class="mobile-hamburger" aria-label="Open sidebar menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+            <h2 id="pageTitle" class="header-title">Dashboard Overview</h2>
+            <p id="pageSubtitle" class="header-subtitle">Manage projects and showcase performance.</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <a href="#add-project" class="btn btn-primary btn-sm" data-view="add-project">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Project</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Content Views -->
+      <div class="admin-content">
+
+        <!-- ── VIEW 1: OVERVIEW ────────────────────────────────── -->
+        <section id="viewOverview" class="content-view active">
+          <!-- Stat Cards Row -->
+          <div class="stats-grid">
+            <div class="stat-box glass-card">
+              <div class="stat-icon icon-gold"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <div class="stat-info">
+                <span class="stat-value" id="statTotal">0</span>
+                <span class="stat-label">Total Projects</span>
+              </div>
+            </div>
+
+            <div class="stat-box glass-card">
+              <div class="stat-icon icon-green"><i class="fa-solid fa-circle-check"></i></div>
+              <div class="stat-info">
+                <span class="stat-value" id="statPublished">0</span>
+                <span class="stat-label">Published Live</span>
+              </div>
+            </div>
+
+            <div class="stat-box glass-card">
+              <div class="stat-icon icon-yellow"><i class="fa-solid fa-file-lines"></i></div>
+              <div class="stat-info">
+                <span class="stat-value" id="statDrafts">0</span>
+                <span class="stat-label">Draft Projects</span>
+              </div>
+            </div>
+
+            <div class="stat-box glass-card">
+              <div class="stat-icon icon-star"><i class="fa-solid fa-star"></i></div>
+              <div class="stat-info">
+                <span class="stat-value" id="statFeatured">0</span>
+                <span class="stat-label">Featured Projects</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions & Recent Table -->
+          <div class="dashboard-sections">
+            <div class="section-card glass-card">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-clock-rotate-left"></i> Recently Added Projects</h3>
+                <a href="#projects" class="view-all-link" data-view="projects">View All &rarr;</a>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Preview</th>
+                      <th>Title</th>
+                      <th>Category</th>
+                      <th>Status</th>
+                      <th>Featured</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recentProjectsTableBody">
+                    <tr><td colspan="6" class="text-center">Loading projects...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ── VIEW 2: ALL PROJECTS ────────────────────────────── -->
+        <section id="viewProjects" class="content-view">
+          <div class="section-card glass-card">
+            <!-- Filter Toolbar -->
+            <div class="table-toolbar">
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="projectSearchInput" class="form-control" placeholder="Search by title, category, tech...">
+              </div>
+              <div class="filter-controls">
+                <select id="categoryFilter" class="form-select">
+                  <option value="all">All Categories</option>
+                </select>
+
+                <select id="statusFilter" class="form-select">
+                  <option value="all">All Statuses</option>
+                  <option value="published">Published</option>
+                  <option value="draft">Drafts</option>
+                </select>
+
+                <select id="featuredFilter" class="form-select">
+                  <option value="all">All Items</option>
+                  <option value="featured">Featured Only</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Full Projects Table -->
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Thumbnail</th>
+                    <th>Project Name</th>
+                    <th>Category</th>
+                    <th>Technologies</th>
+                    <th>Status</th>
+                    <th>Featured</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="projectsTableBody">
+                  <tr><td colspan="7" class="text-center">Loading projects...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ── VIEW 3: ADD / EDIT PROJECT FORM ────────────────── -->
+        <section id="viewProjectForm" class="content-view">
+          <div class="section-card glass-card form-container-card">
+            <div class="form-card-header">
+              <h3 id="formTitle"><i class="fa-solid fa-folder-plus"></i> Add New Project</h3>
+              <p id="formSubtitle">Fill out project parameters below to publish to the DOMINOVA portfolio.</p>
+            </div>
+
+            <form id="projectForm" class="admin-project-form" novalidate>
+              <input type="hidden" id="projectId" value="">
+
+              <div class="form-row">
+                <!-- Project Title -->
+                <div class="form-group col-8">
+                  <label for="inputTitle" class="form-label required">Project Title</label>
+                  <input type="text" id="inputTitle" class="form-control" placeholder="e.g. SUPERDEALS E-Commerce" required>
+                </div>
+
+                <!-- Category -->
+                <div class="form-group col-4">
+                  <label for="inputCategory" class="form-label required">Category</label>
+                  <input type="text" id="inputCategory" class="form-control" placeholder="e.g. E-Commerce, Education, Real Estate" required list="categoryList">
+                  <datalist id="categoryList">
+                    <option value="International Trading Company">
+                    <option value="Bakery Website">
+                    <option value="Company Portfolio">
+                    <option value="Import & Export">
+                    <option value="Technology Website">
+                    <option value="E-Commerce">
+                    <option value="Real Estate">
+                    <option value="Education">
+                  </datalist>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <!-- Short Description -->
+                <div class="form-group col-12">
+                  <label for="inputShortDesc" class="form-label required">Short Description (Cards Overview)</label>
+                  <textarea id="inputShortDesc" class="form-control" rows="2" placeholder="Brief summary displayed on portfolio grid cards..." required></textarea>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <!-- Full Description -->
+                <div class="form-group col-12">
+                  <label for="inputFullDesc" class="form-label">Full Project Description (Detailed View)</label>
+                  <textarea id="inputFullDesc" class="form-control" rows="4" placeholder="Full details, feature highlights, and project background..."></textarea>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <!-- Technologies -->
+                <div class="form-group col-12">
+                  <label for="inputTags" class="form-label">Technologies Used (Comma-separated)</label>
+                  <input type="text" id="inputTags" class="form-control" placeholder="e.g. React, Tailwind CSS, Node.js, WebGL">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <!-- Thumbnail Image Input (File Upload OR Image URL) -->
+                <div class="form-group col-12">
+                  <label class="form-label required">Main Thumbnail Image</label>
+                  <div class="image-upload-tabs">
+                    <div class="tab-controls">
+                      <button type="button" class="tab-btn active" data-tab="uploadTab">File Upload</button>
+                      <button type="button" class="tab-btn" data-tab="urlTab">Image URL</button>
+                    </div>
+
+                    <!-- File Upload Tab -->
+                    <div id="uploadTab" class="upload-tab-panel active">
+                      <div class="dropzone" id="thumbnailDropzone">
+                        <i class="fa-solid fa-cloud-arrow-up dropzone-icon"></i>
+                        <p class="dropzone-text">Drag & drop image file here or <span class="highlight">browse</span></p>
+                        <span class="dropzone-sub">Supports PNG, JPG, WEBP (Max 10MB)</span>
+                        <input type="file" id="thumbnailFileInput" accept="image/*" class="hidden-file-input">
+                      </div>
+                    </div>
+
+                    <!-- Image URL Tab -->
+                    <div id="urlTab" class="upload-tab-panel">
+                      <input type="url" id="imageUrlInput" class="form-control" placeholder="https://example.com/image.jpg">
+                    </div>
+                  </div>
+
+                  <!-- Thumbnail Image Preview -->
+                  <div id="thumbnailPreviewContainer" class="image-preview-box hidden">
+                    <img id="thumbnailPreviewImg" src="" alt="Thumbnail preview">
+                    <button type="button" id="removeThumbnailBtn" class="btn-remove-img"><i class="fa-solid fa-trash-can"></i> Remove</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <!-- Live Demo URL -->
+                <div class="form-group col-6">
+                  <label for="inputDemoUrl" class="form-label">Live Website URL</label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-globe input-icon"></i>
+                    <input type="url" id="inputDemoUrl" class="form-control" placeholder="https://mywebsite.com">
+                  </div>
+                </div>
+
+                <!-- GitHub URL -->
+                <div class="form-group col-6">
+                  <label for="inputGithubUrl" class="form-label">GitHub Repository URL</label>
+                  <div class="input-wrap">
+                    <i class="fa-brands fa-github input-icon"></i>
+                    <input type="url" id="inputGithubUrl" class="form-control" placeholder="https://github.com/username/repo">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row form-toggles-row">
+                <!-- Status Switch -->
+                <div class="form-group col-6">
+                  <label for="inputStatus" class="form-label">Publishing Status</label>
+                  <select id="inputStatus" class="form-select">
+                    <option value="published">🚀 Published (Publicly Visible)</option>
+                    <option value="draft">🔒 Draft (Hidden from Public)</option>
+                  </select>
+                </div>
+
+                <!-- Featured Toggle -->
+                <div class="form-group col-6 toggle-group">
+                  <label class="form-label">Featured Showcase</label>
+                  <label class="switch-label" for="inputFeatured">
+                    <input type="checkbox" id="inputFeatured" class="switch-input">
+                    <span class="switch-slider"></span>
+                    <span class="switch-text">Feature on Home Showcase</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Form Actions -->
+              <div class="form-actions">
+                <button type="button" id="cancelFormBtn" class="btn btn-ghost">Cancel</button>
+                <button type="submit" id="saveProjectBtn" class="btn btn-primary">
+                  <i class="fa-solid fa-floppy-disk"></i> Save & Publish Project
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Admin Application Logic -->
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
