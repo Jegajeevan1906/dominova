@@ -244,10 +244,23 @@ app.get('*', (req, res) => {
 
 // Start Server locally if run directly
 if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`\n🚀 DOMINOVA Server running on http://localhost:${PORT}`);
-    console.log(`🔐 Admin Panel: http://localhost:${PORT}/admin\n`);
-  });
+  const startServer = (portToUse) => {
+    const server = app.listen(portToUse, () => {
+      console.log(`\n🚀 DOMINOVA Server running on http://localhost:${portToUse}`);
+      console.log(`🔐 Admin Panel: http://localhost:${portToUse}/admin\n`);
+    });
+
+    server.on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        console.warn(`\n⚠️ Port ${portToUse} is in use. Retrying on http://localhost:${Number(portToUse) + 1}...`);
+        startServer(Number(portToUse) + 1);
+      } else {
+        console.error('Server error:', err);
+      }
+    });
+  };
+
+  startServer(PORT);
 }
 
 module.exports = app;
